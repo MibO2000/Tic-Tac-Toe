@@ -1,3 +1,5 @@
+package TicTacToe;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -21,7 +23,6 @@ public class tic_tac_toe {
 		option(gameBoard, scan);
 		scan.close();
 	}
-	
 
 	private static void chart(char[][] gameBoard) {
 		for(char[] row:gameBoard) {
@@ -98,9 +99,10 @@ public class tic_tac_toe {
 				return "Player1 won";
 			} else if(player2Positions.containsAll(row)) {
 				return "Player2 won";
-			} else if(player1Positions.size()+player2Positions.size() == 9) {
-				return "Draw";
 			}
+		}
+		if(player1Positions.size()+player2Positions.size() == 9) {
+			return "Draw";
 		}
 		return "";
 	}
@@ -154,9 +156,10 @@ public class tic_tac_toe {
 				return "You won";
 			} else if(cpuPositions.containsAll(row)) {
 				return "cpu won";
-			} else if(playerPositions.size()+cpuPositions.size() == 9) {
-				return "Draw";
 			}
+		}
+		if (playerPositions.size()+cpuPositions.size() == 9) {
+			return "Draw";
 		}
 		return "";
 	}
@@ -196,5 +199,4 @@ public class tic_tac_toe {
 		win.add(cross2);
 		return win;
 	}
-
 }
